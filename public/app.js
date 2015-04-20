@@ -26,3 +26,8 @@ app.value('whateverName', [
         ]
     }
 ]);
+
+
+app.factory('FlashCardsFactory', function ($http) {
+    return { justTesting: 'testing!' };
+});
