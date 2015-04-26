@@ -1,4 +1,4 @@
-var app = angular.module('flashCards', ['AppControllers', 'AppFactories']);
+var app = angular.module('flashCards', ['AppControllers', 'AppFactories', 'AppDirectives']);
 
 // app.value('whateverName', [
 //     {
