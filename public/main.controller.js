@@ -31,13 +31,20 @@ app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scop
 
 	$scope.activeCategory = function (category) {
 		if($scope.category === category) {
-			console.log("true");
+			// console.log("true");
 			return true;
 		}
 		else{
-			console.log("false");
+			// console.log("false");
 			false;
 		}
 	};
+
+	$scope.resetCategory = function() {
+		$flashCardsFactory.getFlashCards().then(function(cards) {
+			$scope.flashCards = cards
+		});
+		console.log($scope.flashCards)
+	}
 
 }]);
