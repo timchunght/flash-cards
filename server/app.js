@@ -28,8 +28,8 @@ app.get('/', function (req, res) {
 });
 
 app.use(function (req, res, next) {
-	console.log('made it')
-	next();
+    console.log('made it')
+    next();
 });
 
 app.get('/cards', function (req, res) {
@@ -37,7 +37,7 @@ app.get('/cards', function (req, res) {
     var modelParams = {};
 
     if (req.query.category) {
-    	modelParams.category = req.query.category;
+        modelParams.category = req.query.category;
     }
 
     FlashCardModel.find(modelParams, function (err, cards) {
