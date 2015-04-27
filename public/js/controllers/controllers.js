@@ -6,7 +6,7 @@ appControllers.controller('MainController', ['$scope', 'FlashCardsFactory','Scor
 		console.log(cards);
 
 		$scope.flashCards = cards;
-		// $scope.loaded = true;
+		$scope.loaded = true;
 	});
 	// console.log(FlashCardsFactory.getFlashCards();
 	// console.log($flashCardsFactory.getFlashCards());

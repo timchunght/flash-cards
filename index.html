@@ -8,7 +8,7 @@
     </head>
 
     <body ng-app="flashCards">
-      <loader></loader>
+      
 
       <div ng-include="'templates/stats.html'"></div>
 
@@ -16,9 +16,10 @@
 
         <button class="category-button" ng-repeat="category in categories" ng-click="getCategoryCards(category)" ng-class = "activeCategory(category) ? 'active' : category-button">{{category}}</button>
         <button class="category-button" ng-click="resetCategory()">Reset</button>
-
+        <loader ng-show="!loaded"></loader>
         <flash-card ng-repeat="flashCard in flashCards | orderBy: 'question'" card="flashCard" answer-function="answerQuestion">
         </flash-card>
+        
       	
       </div>
     </div>
