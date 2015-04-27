@@ -1,4 +1,4 @@
-var app = angular.module('flashCards', []);
+var app = angular.module('flashCards', ['appControllers']);
 
 app.value('whateverName', [
     {
@@ -61,3 +61,11 @@ app.factory('FlashCardsFactory', ['$http', function($http) {
     }
   }
 }]);
+
+
+// app.factory('ScoreFactory', [functions() {
+//     return {
+//         correct: 0,
+//         incorrect: 0
+//     };
+// }]);

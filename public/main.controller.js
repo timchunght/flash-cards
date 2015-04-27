@@ -1,4 +1,6 @@
-app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scope, $flashCardsFactory) {
+var appControllers = angular.module('appControllers', [])
+
+appControllers.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scope, $flashCardsFactory) {
 	// $scope.flashCards = $whateverName;
 	$flashCardsFactory.getFlashCards().then(function(cards) {
 		console.log(cards);
@@ -48,3 +50,8 @@ app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scop
 	}
 
 }]);
+
+// appControllers.controller('StatsController', ['$scope', 'ScoreFactory', function($scope, $scoreFactory) {
+// 	// $scope.scores = $scopeFactory;
+// 	// console.log($scopeFactory);
+// }]);
