@@ -1,8 +1,9 @@
-app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scope, $FlashCardsFactory) {
+app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scope, $flashCardsFactory) {
 	// $scope.flashCards = $whateverName;
-	$FlashCardsFactory.getFlashCards().then(function(cards) {
+	$flashCardsFactory.getFlashCards().then(function(cards) {
 		console.log(cards);
-	})
+		$scope.flashCards = cards;
+	});
 	// console.log(FlashCardsFactory.getFlashCards();
 	// console.log($flashCardsFactory.getFlashCards());
 	$scope.answerQuestion = function (answer, flashCard) {
@@ -10,5 +11,17 @@ app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scop
 			flashCard.answered = true;
 			flashCard.answeredCorrectly = answer.correct;
 		}
-	}
+	};
+
+	$scope.categories = [
+    'MongoDB',
+    'Express',
+    'Angular',
+    'Node'
+	];
+
+	$scope.getCategoryCards = function(category) {
+		console.log(category);
+	};
+
 }]);
