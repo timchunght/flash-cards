@@ -28,20 +28,6 @@ app.value('whateverName', [
 ]);
 
 
-// app.factory('FlashCardsFactory', ['$http', function ($http) {
-//     var flashCardsFactory = {}; 
-//     flashCardsFactory.getFlashCards = function() {
-//         // var flashCards;
-//         $http.get('/cards').then(function (response) {
-//             // console.log(response.data);
-//             return response.data;
-//         });
-//         // return flashCards;
-//     };
-
-//     return flashCardsFactory;
-// }]);
-
 app.factory('FlashCardsFactory', ['$http', function($http) {
   return { 
     getFlashCards: function (category) {
@@ -63,9 +49,19 @@ app.factory('FlashCardsFactory', ['$http', function($http) {
 }]);
 
 
-// app.factory('ScoreFactory', [functions() {
-//     return {
-//         correct: 0,
-//         incorrect: 0
-//     };
-// }]);
+app.factory('ScoreFactory', function () {
+    // var scoreFactory = {};
+    // scoreFactory.scores = function () {
+    //     return { 
+    //         correct: 0,
+    //         incorrect: 0
+    //     };
+    // };
+
+    // return scoreFactory;
+    return { 
+        correct: 0,
+        incorrect: 0
+    };
+
+});
