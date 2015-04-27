@@ -43,21 +43,21 @@ app.value('whateverName', [
 // }]);
 
 app.factory('FlashCardsFactory', ['$http', function($http) {
-    return { 
-        getFlashCards: function (category) {
+  return { 
+    getFlashCards: function (category) {
 
-            var queryParams = {};
+        var queryParams = {};
 
-            if (category) {
-                queryParams.category = category;
-            }
-
-            return $http.get('/cards', {
-                params: queryParams
-            }).then(function (response) {
-                return response.data;
-            });
-
+        if (category) {
+            queryParams.category = category;
         }
+
+        return $http.get('/cards', {
+            params: queryParams
+        }).then(function (response) {
+            return response.data;
+        });
+
     }
+  }
 }]);

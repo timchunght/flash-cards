@@ -22,10 +22,22 @@ app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scop
 
 	$scope.getCategoryCards = function(category) {
 		console.log(category);
+		$scope.category = category;
 		$flashCardsFactory.getFlashCards(category).then(function(filteredCards) {
 			console.log(filteredCards);
 			$scope.flashCards = filteredCards;
 		});
+	};
+
+	$scope.activeCategory = function (category) {
+		if($scope.category === category) {
+			console.log("true");
+			return true;
+		}
+		else{
+			console.log("false");
+			false;
+		}
 	};
 
 }]);
