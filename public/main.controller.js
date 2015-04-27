@@ -22,6 +22,10 @@ app.controller('MainController', ['$scope', 'FlashCardsFactory', function ($scop
 
 	$scope.getCategoryCards = function(category) {
 		console.log(category);
+		$flashCardsFactory.getFlashCards(category).then(function(filteredCards) {
+			console.log(filteredCards);
+			$scope.flashCards = filteredCards;
+		});
 	};
 
 }]);

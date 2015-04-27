@@ -44,11 +44,20 @@ app.value('whateverName', [
 
 app.factory('FlashCardsFactory', ['$http', function($http) {
     return { 
-        getFlashCards: function() {
-       
-            return $http.get("/cards").then(function(response) {
-                return response.data
-            })
+        getFlashCards: function (category) {
+
+            var queryParams = {};
+
+            if (category) {
+                queryParams.category = category;
+            }
+
+            return $http.get('/cards', {
+                params: queryParams
+            }).then(function (response) {
+                return response.data;
+            });
+
         }
     }
 }]);
