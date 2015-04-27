@@ -27,15 +27,7 @@ var app = angular.module('flashCards', ['AppControllers', 'AppFactories', 'AppDi
 //     }
 // ]);
 
-app.filter('cheat', function() {
 
-    // get rid of incorrect answers and only include correct ones
-    return function(answers) {
-        return answers.filter(function(element) {
-            return element.correct
-        })
-    }
-})
 
 
 
