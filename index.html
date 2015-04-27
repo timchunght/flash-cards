@@ -6,7 +6,9 @@
         <link rel="stylesheet" type="text/css" href="/css/reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
     </head>
+
     <body ng-app="flashCards">
+      <loader></loader>
 
       <div ng-include="'templates/stats.html'"></div>
 
@@ -14,14 +16,14 @@
 
         <button class="category-button" ng-repeat="category in categories" ng-click="getCategoryCards(category)" ng-class = "activeCategory(category) ? 'active' : category-button">{{category}}</button>
         <button class="category-button" ng-click="resetCategory()">Reset</button>
+
         <flash-card ng-repeat="flashCard in flashCards | orderBy: 'question'" card="flashCard" answer-function="answerQuestion">
         </flash-card>
       	
       </div>
     </div>
     	<script src="js/lib/angular.js"></script>
-      <script src="js/directives/loader/loader.js"></script>
-      <script src="js/directives/flashcard/flashcard.js"></script>
+      <script src="js/directives/directives.js"></script>
     	<script src="js/app.js"></script>
     	<script src="js/controllers/controllers.js"></script>
       <script src="js/factories/factories.js"></script>

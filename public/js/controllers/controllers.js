@@ -4,7 +4,9 @@ appControllers.controller('MainController', ['$scope', 'FlashCardsFactory','Scor
 	// $scope.flashCards = $whateverName;
 	$flashCardsFactory.getFlashCards().then(function(cards) {
 		console.log(cards);
+
 		$scope.flashCards = cards;
+		// $scope.loaded = true;
 	});
 	// console.log(FlashCardsFactory.getFlashCards();
 	// console.log($flashCardsFactory.getFlashCards());
