@@ -28,6 +28,27 @@ app.value('whateverName', [
 ]);
 
 
-app.factory('FlashCardsFactory', function ($http) {
-    return { justTesting: 'testing!' };
-});
+// app.factory('FlashCardsFactory', ['$http', function ($http) {
+//     var flashCardsFactory = {}; 
+//     flashCardsFactory.getFlashCards = function() {
+//         // var flashCards;
+//         $http.get('/cards').then(function (response) {
+//             // console.log(response.data);
+//             return response.data;
+//         });
+//         // return flashCards;
+//     };
+
+//     return flashCardsFactory;
+// }]);
+
+app.factory('FlashCardsFactory', ['$http', function($http) {
+    return { 
+        getFlashCards: function() {
+       
+            return $http.get("/cards").then(function(response) {
+                return response.data
+            })
+        }
+    }
+}]);
